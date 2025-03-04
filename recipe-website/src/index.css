@@ -10,5 +10,12 @@
 }
 
 :root {
-  background: #FFFBF0
+  background: #FFFBF0;
+  
 }
+
+body{
+  height: 100vh;
+  overflow: hidden;
+}
+
