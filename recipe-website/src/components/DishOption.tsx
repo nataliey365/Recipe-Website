@@ -8,7 +8,7 @@ interface Props {
 
 export default function DishOption({dishColor, onClick, label, selected}:Props){
 	return (
-		<button className="py-1 m-2 cursor-pointer font-manrope px-6 text-3xl border rounded-3xl" style={selected ?{ color:dishColor}:{color:"black"}} onClick={onClick}>
+		<button className="py-1 m-2 cursor-pointer font-manrope px-6 border-brown text-3xl border rounded-3xl" style={selected ?{ color:dishColor, borderColor:dishColor}:{color:"#874503"}} onClick={onClick}>
 			{label}
 		</button>
 	)

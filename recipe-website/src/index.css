@@ -4,6 +4,10 @@
 @theme {
   --color-*: initial;
   --color-mandarin: #F67C01;
+  --color-red: #F24D30;
+  --color-green: #72A944;
+  --color-beige:#FFFBF0;
+  --color-brown:#874503;
   --font-playwrite: Playwrite NL, sans-serif;
   --font-manrope: Manrope, sans-serif;
   --font-questrial: Questrial, sans-serif;
