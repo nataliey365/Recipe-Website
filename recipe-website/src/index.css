@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NL&family=Manrope:wght@400;700&family=Questrial&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
 
 @theme {
   --color-*: initial;
@@ -23,3 +25,5 @@ body{
   overflow: hidden;
 }
 
+
+@tailwind utilities;
