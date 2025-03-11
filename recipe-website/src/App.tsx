@@ -3,7 +3,6 @@ import DishOption from "./components/DishOption";
 import { motion, AnimatePresence } from "motion/react";
 import DishCard from "./components/DishCard";
 import Submit from "./components/Submit";
-import { MultiSelect } from "react-multi-select-component";
 import CarouselBtn from "./components/CarouselBtn";
 
 
@@ -100,15 +99,17 @@ function App() {
                 layout
                 transition={{ duration: "0.5" }}
               >
-                <DishCard dishOption="meat" selected={meat}>
+                <DishCard dishOption="Meat" selected={meat}>
                   <CarouselBtn options={proteins} setOption={setSelectedOption}></CarouselBtn>
 
                   </DishCard>
-                <DishCard dishOption="vege" selected={vege}></DishCard>
-                <DishCard dishOption="mix" selected={mix}></DishCard>
+                <DishCard dishOption="Vegetable" selected={vege}></DishCard>
+                <DishCard dishOption="Mixed" selected={mix}></DishCard>
               </motion.div>
               { meat || vege || mix ? <Submit onClick={() => console.log(selectedOption)}/> : null}
             </motion.div>
+
+
 
 
 

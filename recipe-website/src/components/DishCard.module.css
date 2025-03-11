@@ -5,6 +5,7 @@
     aspect-ratio: 1;
     padding: calc(1.5*var(--r));
     background: #F24D30;
+    color:#F24D30;
     mask: 
       linear-gradient(#000 0 0) no-repeat
        50%/calc(100% - 2*var(--r)) calc(100% - 2*var(--r)), 
@@ -19,6 +20,7 @@
     aspect-ratio: 1;
     padding: calc(1.5*var(--r));
     background: #72A944;
+    color:  #72A944;
     mask: 
       linear-gradient(#000 0 0) no-repeat
        50%/calc(100% - 2*var(--r)) calc(100% - 2*var(--r)), 
@@ -33,6 +35,7 @@
     aspect-ratio: 1;
     padding: calc(1.5*var(--r));
     background:#F67C01;
+    color:#F67C01;
     mask: 
       linear-gradient(#000 0 0) no-repeat
        50%/calc(100% - 2*var(--r)) calc(100% - 2*var(--r)), 
@@ -40,21 +43,3 @@
        0 0/calc(2*var(--r)) calc(2*var(--r)) round;
   }
 
-  .wigglybox {
-    --s: 20px;  /* control the size of the wave */
-    --w: 500px; /* preferred image width */
-    
-    width: round(var(--w),4*var(--s));
-    aspect-ratio: 1;
-    border: calc(2*var(--s)) solid #0000;
-    padding: calc(3*var(--s)/2);
-   height:20rem;
-    background: #cdaf4e;
-    mask: 
-      conic-gradient(#000 0 0) no-repeat
-       50%/calc(100% - 6*var(--s)) calc(100% - 6*var(--s)),
-      radial-gradient(var(--s),#000 100%,#0000 calc(100% + 1px)) 
-       0 0/calc(4*var(--s)) calc(4*var(--s)),
-      radial-gradient(var(--s),#0000 calc(100% - 1px),#000) 
-       var(--s) var(--s)/calc(2*var(--s)) calc(2*var(--s)) padding-box;
-  }
