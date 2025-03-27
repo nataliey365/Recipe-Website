@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import DishCard from "./components/DishCard";
 import Submit from "./components/Submit";
 import CarouselBtn from "./components/CarouselBtn";
+import RecipeCard from "./components/RecipeCard";
 
 
 function App() {
@@ -20,6 +21,23 @@ function App() {
   const proteins = ["All Proteins", "Chicken", "Beef", "Pork"]
   
   const [selectedOption, setSelectedOption] = useState(proteins[0]);
+  const[recipeCardToggle, setRecipeCardToggle] = useState(false);
+
+  const handleSubmit = () => {
+    console.log(recipeCardToggle)
+  }
+
+  const ex = 
+    {
+      id: 1,
+      meat:false,
+      vege:true,
+      mixed:false,
+      name:'Vietnamese Noodle Salad',
+      ingredients:["Rice Noodles", "Garlic", "Fish Sauce", "Vinegar/Lemon", "Water", "Sugar","Carrots","Cucumber", "Lettuce"],
+      notes:["Best with a stir-fried meat dish or Chả giò"]
+    };
+
 
 
   return (
@@ -101,13 +119,30 @@ function App() {
               >
                 <DishCard dishOption="Meat" selected={meat}>
                   <CarouselBtn options={proteins} setOption={setSelectedOption}></CarouselBtn>
-
                   </DishCard>
                 <DishCard dishOption="Vegetable" selected={vege}></DishCard>
                 <DishCard dishOption="Mixed" selected={mix}></DishCard>
               </motion.div>
-              { meat || vege || mix ? <Submit onClick={() => console.log(selectedOption)}/> : null}
+              { meat || vege || mix ? <Submit text="Lets Get Cooking!" onClick={() => setRecipeCardToggle((prev) => !prev)}/> : null}
+      
+              {recipeCardToggle ? (
+              <div className="fixed z-1 w-full h-full bg-transp">
+                <div className="flex flex-col h-full items-center justify-center">
+                <button className="text-4xl border border-dashed border-3 text-mandarin px-4 pb-2 rounded-full hover:border-solid cursor-pointer" onClick={() => setRecipeCardToggle((prev) => !prev)}>x</button>
+                <div className="flex flex-row">
+                <RecipeCard dishOption="Vegetable" recipeData={ex}></RecipeCard>
+                <RecipeCard dishOption="Meat" recipeData={ex}></RecipeCard>
+                </div>
+                <Submit onClick={()=> console.log("test")} text="Regenerate"></Submit>
+                </div>
+            </div>
+            ): null
+          }            
+            
             </motion.div>
+
+            
+            
 
 
 

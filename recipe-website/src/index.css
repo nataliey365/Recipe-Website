@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+NL&family=Manrope:wght@400;700&family=Questrial&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playwrite+NL:wght@100..400&family=Questrial&display=swap");
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
 
 @theme {
   --color-*: initial;
@@ -10,6 +8,8 @@
   --color-green: #72A944;
   --color-beige:#FFFBF0;
   --color-brown:#874503;
+  --color-transp: #FFFBF0E6;
+  --color-lightgreen: #CCE1B0;
   --font-playwrite: Playwrite NL, sans-serif;
   --font-manrope: Manrope, sans-serif;
   --font-questrial: Questrial, sans-serif;
@@ -26,4 +26,3 @@ body{
 }
 
 
-@tailwind utilities;

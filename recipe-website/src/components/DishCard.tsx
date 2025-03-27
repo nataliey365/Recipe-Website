@@ -23,7 +23,7 @@ export default function Di({dishOption, selected, children}:Props){
                         key={dishOption}>
                 <div className="bg-beige p-1">
             <div className="border border-2 flex flex-col bg-beige  h-40 w-82 flex justify-center items-center">
-                <h1 className="font-manrope text-4xl underline underline-offset-4 ">{dishOption} Dish</h1>
+                <h1 className="font-playwrite text-2xl underline underline-offset-4 ">{dishOption} Dish</h1>
                 {children}
             </div>
             </div>
