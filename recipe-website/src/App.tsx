@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from "motion/react";
 import DishCard from "./components/DishCard";
 import Submit from "./components/Submit";
 import CarouselBtn from "./components/CarouselBtn";
-import RecipeCard from "./components/RecipeCard";
+import RecipeCardVege from "./components/RecipeCardVege";
+import RecipeCardMeat from "./components/RecipeCardMeat";
+import RecipeCardMix from "./components/RecipeCardMix";
 
 
 function App() {
@@ -130,8 +132,9 @@ function App() {
                 <div className="flex flex-col h-full items-center justify-center">
                 <button className="text-4xl border border-dashed border-3 text-mandarin px-4 pb-2 rounded-full hover:border-solid cursor-pointer" onClick={() => setRecipeCardToggle((prev) => !prev)}>x</button>
                 <div className="flex flex-row">
-                <RecipeCard dishOption="Vegetable" recipeData={ex}></RecipeCard>
-                <RecipeCard dishOption="Meat" recipeData={ex}></RecipeCard>
+                <RecipeCardMeat recipeData={ex}></RecipeCardMeat>
+                <RecipeCardVege recipeData={ex}></RecipeCardVege>
+                <RecipeCardMix recipeData={ex}></RecipeCardMix>
                 </div>
                 <Submit onClick={()=> console.log("test")} text="Regenerate"></Submit>
                 </div>
@@ -140,15 +143,6 @@ function App() {
           }            
             
             </motion.div>
-
-            
-            
-
-
-
-
-
-      
           </div>
           
         )}
