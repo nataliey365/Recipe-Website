@@ -24,6 +24,7 @@ function App() {
   
   const [selectedOption, setSelectedOption] = useState(proteins[0]);
   const[recipeCardToggle, setRecipeCardToggle] = useState(false);
+  const [addRecipeToggle, setAddRecipeToggle] = useState(false);
 
   const handleSubmit = () => {
     console.log(recipeCardToggle)
@@ -126,21 +127,45 @@ function App() {
                 <DishCard dishOption="Mixed" selected={mix}></DishCard>
               </motion.div>
               { meat || vege || mix ? <Submit text="Lets Get Cooking!" onClick={() => setRecipeCardToggle((prev) => !prev)}/> : null}
-      
+              
+              <AnimatePresence>
               {recipeCardToggle ? (
-              <div className="fixed z-1 w-full h-full bg-transp">
+              <motion.div
+              initial={{opacity:0}}
+                animate={{ opacity:1}}
+                exit={{opacity:0}}
+                key="bg"
+              className="fixed z-1 w-full h-full bg-transp">
                 <div className="flex flex-col h-full items-center justify-center">
                 <button className="text-4xl border border-dashed border-3 text-mandarin px-4 pb-2 rounded-full hover:border-solid cursor-pointer" onClick={() => setRecipeCardToggle((prev) => !prev)}>x</button>
-                <div className="flex flex-row">
+      
+
+                <motion.div 
+              initial={{opacity:0, y:700}}
+              animate={{ opacity:1, y:0}}
+              exit={{opacity:0,y:-700}}
+              transition={{duration:0.8, type: "spring"}}
+              key="recipecards"
+                className="flex flex-row">
                 <RecipeCardMeat recipeData={ex}></RecipeCardMeat>
                 <RecipeCardVege recipeData={ex}></RecipeCardVege>
                 <RecipeCardMix recipeData={ex}></RecipeCardMix>
-                </div>
+                </motion.div>
+
                 <Submit onClick={()=> console.log("test")} text="Regenerate"></Submit>
-                </div>
+
             </div>
+            </motion.div>
             ): null
-          }            
+          }  
+          </AnimatePresence> 
+        
+
+          {addRecipeToggle? (
+            <div>
+
+            </div>
+          ):null}         
             
             </motion.div>
           </div>
